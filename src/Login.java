@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane; 
-public class App {  
+public class Login {  
     public static void main(String[] args) throws Exception { 
     String nome = JOptionPane.showInputDialog(null, "Insira o seu nome", "Login", JOptionPane.QUESTION_MESSAGE); 
     String senha =  JOptionPane.showInputDialog(null, "Insira a sua senha", "", JOptionPane.QUESTION_MESSAGE);
