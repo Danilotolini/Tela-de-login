@@ -1,13 +1,32 @@
-import javax.swing.JOptionPane; 
-public class Login {  
-    public static void main(String[] args) throws Exception { 
-    String nome = JOptionPane.showInputDialog(null, "Insira o seu nome", "Login", JOptionPane.QUESTION_MESSAGE); 
-    String senha =  JOptionPane.showInputDialog(null, "Insira a sua senha", "", JOptionPane.QUESTION_MESSAGE);
-    JOptionPane.showMessageDialog(null, "Seja bem vindo(a) " + nome , "", JOptionPane.INFORMATION_MESSAGE);  
-    JOptionPane(null, senha);
-}
+import javax.swing.*;
 
-    private static void JOptionPane(Object object, String senha) {
-        throw new UnsupportedOperationException("Unimplemented method 'JOptionPane'");
-    } 
+public class Login2 {
+    public static void main(String[] args) {
+        JTextField Campodeusuario = new JTextField();
+        JPasswordField Campodesenha = new JPasswordField();
+        Campodesenha.setEchoChar('*'); // Esta linha oculta os caracteres digitados no campo de senha
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+        panel.add(new JLabel("Usuário:"));
+        panel.add(Campodeusuario);
+        panel.add(new JLabel("Senha:"));
+        panel.add(Campodesenha);
+
+        int result = JOptionPane.showConfirmDialog(null, panel, "Login", JOptionPane.OK_CANCEL_OPTION);
+
+        if (result == JOptionPane.OK_OPTION) {
+            String usuario = Campodeusuario.getText();
+            String Senha = new String(Campodesenha.getPassword());
+            String Senhacerta = "1234";
+
+            if (Senha.equals(Senhacerta)) {
+                JOptionPane.showMessageDialog(null, "Bem vindo(a), " + usuario + "!", "Concluido com sucesso", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Senha ou nome de usuário incorretos ", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Login cancelado", "Cancelado", JOptionPane.WARNING_MESSAGE);
+        }
+    }
 }
