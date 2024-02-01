@@ -24,7 +24,7 @@ public class Login2 {
                 JOptionPane.showMessageDialog(null, "Bem vindo(a), " + usuario + "!", "Concluido com sucesso", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Senha ou nome de usuário incorretos ", "Erro", JOptionPane.ERROR_MESSAGE);
-            }
+            } 
         } else {
             JOptionPane.showMessageDialog(null, "Login cancelado", "Cancelado", JOptionPane.WARNING_MESSAGE);
         }
